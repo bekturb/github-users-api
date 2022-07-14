@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<header id="header">
+    <div class="container">
+        <div class="header">
+                <a class="header--logo" href="">Github Users</a>
+            <div class="header--corner">
+                <button class="header--corner__search">Search</button>
+                <button class="header--corner__favorites">Favorites</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="container">
+        <div class="hero">
+            <form class="hero--sorted" action="">
+                <div class="hero--sorted__users">
+                    <h3 class="hero--sorted__users--title">Search for Github users</h3>
+                    <input class="hero--sorted__users--user" type="text" id="hero--sorted__users--user">
+                </div>
+                <div class="hero--sorted--sort">
+                    <h3 class="hero--sorted--sort--items--title">Sort</h3>
+                    <select   class="hero--sorted--sort--items" name="" id="hero--sort">
+                        <option class="hero--sorted--sort--items__option" value="created">Created</option>
+                        <option class="hero--sorted--sort--items__option" value="updated">Updated</option>
+                        <option class="hero--sorted--sort--items__option" value="interactions">Interactions</option>
+                        <option class="hero--sorted--sort--items__option" value="comments">Comments</option>
+                        <option class="hero--sorted--sort--items__option" value="reactions">Reactions</option>
+                        <option class="hero--sorted--sort--items__option" value="reactions-+1">Reactions-+1</option>
+                        <option class="hero--sorted--sort--items__option" value="reactions--1">reactions--1</option>
+                        <option class="hero--sorted--sort--items__option" value="reactions-thinking_face">reactions-thinking_face</option>
+                        <option class="hero--sorted--sort--items__option" value="reactions-heart">reactions-heart</option>
+                    </select>
+                </div>
+                <div class="hero--sorted--order">
+                    <h3 class="hero--sorted--order--title">Order</h3>
+                    <select class="hero--sorted--order--items" name="" id="hero--order">
+                        <option class="hero--sorted--order--items__option" value="desc">Desc</option>
+                        <option class="hero--sorted--order--items__option" value="asc">Asc</option>
+                    </select>
+                </div>
+                <div class="hero--sorted--perPage">
+                    <h3 class="hero--sorted--perPage--title">Per page</h3>
+                    <select class="hero--sorted--perPage--items" name="" id="hero--perPage">
+                        <option class="hero--sorted--perPage--items--option" value="">1</option>
+                        <option class="hero--sorted--perPage--items--option" value="">2</option>
+                        <option class="hero--sorted--perPage--items--option" value="">3</option>
+                        <option class="hero--sorted--perPage--items--option" value="">4</option>
+                    </select>
+                </div>
+            </form>
+            <div class="hero--results">
+                <h2 class="hero--result__title">Results</h2>
+                <div class="hero--result__error"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="js/index.js"></script>
+</body>
+</html>

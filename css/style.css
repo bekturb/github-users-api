@@ -1,0 +1,273 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+ul,li,ol{
+    list-style: none;
+}
+
+
+body{
+    background: rgba(128, 128, 128, 0.28);
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/*HEADER*/
+
+#header{
+    padding:20px 0;
+    width: 100%;
+    background: rgba(130, 130, 130, 0.30);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header--logo{
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.header--corner__search{
+    margin: 0 10px;
+    padding: 5px 40px;
+}
+
+.header--corner__favorites{
+    padding: 5px 40px;
+}
+
+/*HEADER*/
+
+
+/*HERO*/
+
+#hero{
+    min-height: 100vh;
+    padding: 60px 0;
+}
+
+.hero--sorted{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.hero--sorted__users--title{
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.hero--sorted__users--user{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 500px;
+    height: 40px;
+    text-indent: 20px;
+}
+
+.hero--sorted--sort--items
+{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+}
+
+.hero--sorted--sort--items--title{
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+.hero--sorted--order--items
+{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;}
+
+.hero--sorted--order--title{
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.hero--sorted--perPage--items
+{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;}
+
+.hero--sorted--perPage--title{
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+
+.hero--results{
+    padding: 50px 0;
+}
+
+.hero--results__data{
+    height: 170px;
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+}
+
+
+.hero--result__title{
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.hero--results__data--info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero--results__data--info__img{
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 30px;
+}
+
+.hero--results__data--user{
+    display: inline;
+    margin: 0 10px;
+}
+
+.hero--results__data--user__name{
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.hero--results__data--user__link{
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+    color: black;
+}
+
+.hero--results__data--active{
+    margin: 0 30px;
+    display: inline;
+    text-align: end;
+}
+
+.hero--results__data--active--star{
+    border-radius: 10px;
+    padding: 10px 10px;
+    background: lightgrey;
+    color: white;
+
+}
+
+.hero--results__data--active--button{
+    margin-top: 20px;
+
+}
+
+.hero--results__data--active--button--btn{
+    padding: 10px 50px;
+    background: #000;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+
+
+.hero--result__error{
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: red;
+}
+
+.hero--result__http--title{
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: red;
+}
+
+/*HERO*/
