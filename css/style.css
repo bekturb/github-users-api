@@ -165,7 +165,7 @@ body{
 }
 
 .hero--results__data{
-    height: 170px;
+    height: 140px;
     margin: 40px 0;
     display: flex;
     justify-content: space-between;
@@ -191,7 +191,7 @@ body{
 }
 
 .hero--results__data--info__img{
-    width: 120px;
+    width: 100px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 30px;

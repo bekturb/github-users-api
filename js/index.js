@@ -1,27 +1,44 @@
 // window.addEventListener("load", function () {
 
+const baseUrl = 'https://api.github.com/search/users?q='
 
-// const heroSearch = document.querySelector('.hero--sorted')
+
 const heroResults = document.querySelector('.hero--results')
 const errorItem = document.querySelector('.hero--result__error')
-// const sortSelect = document.getElementById('hero--sort')
+
+const sortSelect = document.getElementById('hero--sort')
+const heroOrder = document.getElementById('hero--order')
+const heroPerPage = document.getElementById('hero--perPage')
 
 
 
-//
-// sortSelect.addEventListener('change', () => {
-//       return sortSelect.value;
-// })
+let allResult = {
+    sort: 'created',
+    order: 'desc',
+    perPage: 4,
 
-// const handleSort = (array) => {
-//     console.log(array)
-// }
-//
-// handleSort(strUser)
+};
+
+console.log(allResult)
+
+function addResultSort(el) {
+     allResult.sort = el
+}
+
+function addResultOrder(el) {
+     allResult.order = el
+}
+
+
+function addResultPerPage(el) {
+     allResult.perPage = el
+}
+
+
 
 function searchUsers(users) {
-    // console.log(strUser)
-    fetch(`https://api.github.com/search/repositories?q=${users}&sort=craeted_at&order=desc`)
+
+    fetch(`${baseUrl}${users}&sort=${allResult.sort}_at&order=${allResult.order}&per_page=${allResult.perPage}`)
         .then(response => {
             console.log(response)
             if (!response.ok) {
@@ -41,24 +58,17 @@ function searchUsers(users) {
         .catch((error) => {
             errorItem.innerHTML = error;
         })
-}
-
-
-// const sortedItemsValue = (array) => {
-//     return array
 // }
 
-
-
-function renderResults(result) {
-    heroResults.innerHTML = '';
-    result.map(el => (
-        heroResults.innerHTML += `
+    function renderResults(result) {
+        heroResults.innerHTML = '';
+        result.map(el => (
+            heroResults.innerHTML += `
             <div class="hero--results__data">
                     <div class="hero--results__data--info">
-                        <img class="hero--results__data--info__img" src="${el.owner.avatar_url}" alt="">
+                        <img class="hero--results__data--info__img" src="${el.avatar_url}" alt="">
                         <div class="hero--results__data--user">
-                            <h3 class="hero--results__data--user__name">${el.name}</h3>
+                            <h3 class="hero--results__data--user__name">${el.login}</h3>
                             <a class="hero--results__data--user__link" href="${el.url}">${el.html_url}</a>
                         </div>
                     </div>
@@ -68,28 +78,51 @@ function renderResults(result) {
                             <button class="hero--results__data--active--button--btn">Show repisitories</button>
                         </div>
                     </div>`
-    ))
+        ))
+    }
+
+
+
+
+
+
+
+
+
+
 }
-
-
 
 
 let searchTimoutToken = 0;
 
 window.onload = () => {
-    const searchUser = document.getElementById('hero--sorted__users--user')
-    searchUser.onkeyup = (event) => {
+    sortSelect.addEventListener('change', () => {
+        addResultSort(sortSelect.value)
+        searchUsers()
+    })
 
-        clearTimeout(searchTimoutToken);
 
-        if (searchUser.value.trim().length === 0) {
-            return;
-        }
+    heroOrder.addEventListener('change', () => {
+        addResultOrder(heroOrder.value)
+        searchUsers()
+    })
 
-        searchTimoutToken = setTimeout(() => {
-            searchUsers(searchUser.value)
-        }, 500);
-    };
+    heroPerPage.addEventListener('change', () => {
+        addResultPerPage(heroPerPage.value)
+        searchUsers()
+    })
+    const search = document.getElementById('hero--sorted__users--user')
+    search.onkeyup = (event) => {
+        // searchUsers(search.value)
+
+        clearTimeout(searchTimoutToken)
+
+       searchTimoutToken = setTimeout(() => {
+            searchUsers(search.value)
+        },500)
+
+
+    }
 }
 
 

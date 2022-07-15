@@ -35,7 +35,7 @@
                 <div class="hero--sorted--sort">
                     <h3 class="hero--sorted--sort--items--title">Sort</h3>
                     <select   class="hero--sorted--sort--items" name="" id="hero--sort">
-                        <option class="hero--sorted--sort--items__option" value="created">Created</option>
+                        <option class="hero--sorted--sort--items__option" selected="selected"  value="created" >Created</option>
                         <option class="hero--sorted--sort--items__option" value="updated">Updated</option>
                         <option class="hero--sorted--sort--items__option" value="interactions">Interactions</option>
                         <option class="hero--sorted--sort--items__option" value="comments">Comments</option>
@@ -49,21 +49,21 @@
                 <div class="hero--sorted--order">
                     <h3 class="hero--sorted--order--title">Order</h3>
                     <select class="hero--sorted--order--items" name="" id="hero--order">
-                        <option class="hero--sorted--order--items__option" value="desc">Desc</option>
+                        <option class="hero--sorted--order--items__option" selected="selected" value="desc">Desc</option>
                         <option class="hero--sorted--order--items__option" value="asc">Asc</option>
                     </select>
                 </div>
                 <div class="hero--sorted--perPage">
                     <h3 class="hero--sorted--perPage--title">Per page</h3>
                     <select class="hero--sorted--perPage--items" name="" id="hero--perPage">
-                        <option class="hero--sorted--perPage--items--option" value="">1</option>
-                        <option class="hero--sorted--perPage--items--option" value="">2</option>
-                        <option class="hero--sorted--perPage--items--option" value="">3</option>
-                        <option class="hero--sorted--perPage--items--option" value="">4</option>
+                        <option class="hero--sorted--perPage--items--option" value="1">1</option>
+                        <option class="hero--sorted--perPage--items--option" value="2">2</option>
+                        <option class="hero--sorted--perPage--items--option" value="3">3</option>
+                        <option class="hero--sorted--perPage--items--option" selected="selected" value="4">4</option>
                     </select>
                 </div>
             </form>
-            <div class="hero--results">
+            <div class="hero--results" id="hero--result">
                 <h2 class="hero--result__title">Results</h2>
                 <div class="hero--result__error"></div>
                 </div>
