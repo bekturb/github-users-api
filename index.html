@@ -17,8 +17,8 @@
         <div class="header">
                 <a class="header--logo" href="">Github Users</a>
             <div class="header--corner">
-                <button class="header--corner__search">Search</button>
-                <button class="header--corner__favorites">Favorites</button>
+                <a href="index.html" class="header--corner__search">Search</a>
+                <a href="favorites.html" class="header--corner__favorites">Favorites</a>
             </div>
         </div>
     </div>
@@ -35,15 +35,15 @@
                 <div class="hero--sorted--sort">
                     <h3 class="hero--sorted--sort--items--title">Sort</h3>
                     <select   class="hero--sorted--sort--items" name="" id="hero--sort">
-                        <option class="hero--sorted--sort--items__option" selected="selected"  value="created" >Created</option>
-                        <option class="hero--sorted--sort--items__option" value="updated">Updated</option>
-                        <option class="hero--sorted--sort--items__option" value="interactions">Interactions</option>
-                        <option class="hero--sorted--sort--items__option" value="comments">Comments</option>
-                        <option class="hero--sorted--sort--items__option" value="reactions">Reactions</option>
-                        <option class="hero--sorted--sort--items__option" value="reactions-+1">Reactions-+1</option>
-                        <option class="hero--sorted--sort--items__option" value="reactions--1">reactions--1</option>
-                        <option class="hero--sorted--sort--items__option" value="reactions-thinking_face">reactions-thinking_face</option>
-                        <option class="hero--sorted--sort--items__option" value="reactions-heart">reactions-heart</option>
+                        <option class="hero--sorted--sort--items__option" selected="selected"  value="followers" >Followers</option>
+                        <option class="hero--sorted--sort--items__option" value="repos">Repositories</option>
+                        <option class="hero--sorted--sort--items__option" value="interactions">Joined</option>
+<!--                        <option class="hero&#45;&#45;sorted&#45;&#45;sort&#45;&#45;items__option" value="comments">Comments</option>-->
+<!--                        <option class="hero&#45;&#45;sorted&#45;&#45;sort&#45;&#45;items__option" value="reactions">Reactions</option>-->
+<!--                        <option class="hero&#45;&#45;sorted&#45;&#45;sort&#45;&#45;items__option" value="reactions-+1">Reactions-+1</option>-->
+<!--                        <option class="hero&#45;&#45;sorted&#45;&#45;sort&#45;&#45;items__option" value="reactions&#45;&#45;1">reactions&#45;&#45;1</option>-->
+<!--                        <option class="hero&#45;&#45;sorted&#45;&#45;sort&#45;&#45;items__option" value="reactions-thinking_face">reactions-thinking_face</option>-->
+<!--                        <option class="hero&#45;&#45;sorted&#45;&#45;sort&#45;&#45;items__option" value="reactions-heart">reactions-heart</option>-->
                     </select>
                 </div>
                 <div class="hero--sorted--order">
@@ -67,14 +67,17 @@
                 <h2 class="hero--result__title">Results</h2>
                 <div class="hero--result__error"></div>
                 </div>
+            <div class="pagination">
+                <span class="pagination__prev"><i class="fa-solid fa-angle-left"></i>prev</span>
+                <input class="pagination__input" id="pagination__input" type="text">
+                <span class="pagination__next">next<i class="fa-solid fa-angle-right"></i></span>
+            </div>
             </div>
         </div>
     </div>
 </section>
 
-
-
-
 <script src="js/index.js"></script>
+<script src="js/favorites.js"></script>
 </body>
 </html>

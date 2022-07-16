@@ -1,44 +1,57 @@
-// window.addEventListener("load", function () {
-
 const baseUrl = 'https://api.github.com/search/users?q='
 
 
 const heroResults = document.querySelector('.hero--results')
 const errorItem = document.querySelector('.hero--result__error')
-
-const sortSelect = document.getElementById('hero--sort')
-const heroOrder = document.getElementById('hero--order')
-const heroPerPage = document.getElementById('hero--perPage')
-
+// const heroTitle = document.querySelector('.hero--result__title')
 
 
 let allResult = {
-    sort: 'created',
+    name: '',
+    sort: 'followers',
     order: 'desc',
     perPage: 4,
+    pagination: 1,
 
 };
 
 console.log(allResult)
 
+function addResultUser (el) {
+    allResult.name = el
+}
+
 function addResultSort(el) {
-     allResult.sort = el
+    allResult.sort = el
 }
 
 function addResultOrder(el) {
-     allResult.order = el
+    allResult.order = el
 }
 
 
 function addResultPerPage(el) {
-     allResult.perPage = el
+    allResult.perPage = el
+}
+
+function addResultPagination(el) {
+    allResult.pagination = el
+}
+
+function addResultPrev() {
+    allResult.pagination = allResult.pagination > 1 ? allResult.pagination - 1 : allResult.pagination
+}
+
+function addResultNext() {
+    allResult.pagination = allResult.pagination + 1
 }
 
 
 
-function searchUsers(users) {
 
-    fetch(`${baseUrl}${users}&sort=${allResult.sort}_at&order=${allResult.order}&per_page=${allResult.perPage}`)
+function searchUsers(users = 'a') {
+
+    fetch(`${baseUrl}${allResult.name}&sort=${allResult.sort}&order=${allResult.order}&per_page=${allResult.perPage}&page=${allResult.pagination}`)
         .then(response => {
             console.log(response)
             if (!response.ok) {
@@ -51,6 +64,9 @@ function searchUsers(users) {
         .then((data) => {
             console.log(data)
             const resultsUser = data.items
+            if (resultsUser === 0){
+
+            }
             renderResults(resultsUser)
             errorItem.innerHTML = ''
         })
@@ -58,6 +74,7 @@ function searchUsers(users) {
         .catch((error) => {
             errorItem.innerHTML = error;
         })
+
 // }
 
     function renderResults(result) {
@@ -80,22 +97,20 @@ function searchUsers(users) {
                     </div>`
         ))
     }
-
-
-
-
-
-
-
-
-
-
 }
 
 
 let searchTimoutToken = 0;
 
 window.onload = () => {
+
+    const sortSelect = document.getElementById('hero--sort')
+    const heroOrder = document.getElementById('hero--order')
+    const heroPerPage = document.getElementById('hero--perPage')
+    const paginationInput = document.getElementById('pagination__input')
+    const prevButton = document.querySelector('.pagination__prev')
+    const nextButton = document.querySelector('.pagination__next')
+
     sortSelect.addEventListener('change', () => {
         addResultSort(sortSelect.value)
         searchUsers()
@@ -111,15 +126,33 @@ window.onload = () => {
         addResultPerPage(heroPerPage.value)
         searchUsers()
     })
+
+
+    paginationInput.addEventListener('change', () => {
+        addResultPagination(paginationInput.value)
+        searchUsers()
+    })
+
+    prevButton.addEventListener('click', () => {
+        addResultPrev()
+        searchUsers()
+    })
+
+    nextButton.addEventListener('click', () => {
+        addResultNext()
+        searchUsers()
+    })
+
     const search = document.getElementById('hero--sorted__users--user')
     search.onkeyup = (event) => {
         // searchUsers(search.value)
 
         clearTimeout(searchTimoutToken)
 
-       searchTimoutToken = setTimeout(() => {
-            searchUsers(search.value)
-        },500)
+        searchTimoutToken = setTimeout(() => {
+            addResultUser(search.value)
+            searchUsers()
+        }, 500)
 
 
     }
