@@ -26,17 +26,8 @@ class Favorites {
         } else{
             users.splice(index,1)
         }
-
         localStorage.setItem(this.keyname, JSON.stringify(users));
-
-
         return { pushUsers, users }
-
     }
 }
-
-const favorites = new Favorites();
-
-
-favorites.putUsers('el3')
-favorites.putUsers('el1')
+const favoritesUtils = new Favorites();

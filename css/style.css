@@ -64,7 +64,7 @@ body{
 .header--corner__favorites{
     border-radius: 10px;
     padding: 5px 40px;
-    background: rgb(0, 0, 0);
+    background: rgb(122, 110, 110);
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-weight: 400;
@@ -72,7 +72,10 @@ body{
     letter-spacing: 1.5px;
     color: white;
 }
-
+.header--corner__favorites--count{
+    margin-left: 20px;
+    position: absolute;
+}
 /*HEADER*/
 
 
@@ -249,6 +252,10 @@ body{
     background: lightgrey;
     color: white;
 
+}
+
+.hero--results__data--active--star__active{
+    color: black;
 }
 
 .hero--results__data--active--button{
