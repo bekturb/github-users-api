@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 <section id="hero">
     <div class="container">
         <div class="hero">
-            <form class="hero--sorted" action="">
+            <form class="hero--sorted" >
                 <div class="hero--sorted__users">
                     <h3 class="hero--sorted__users--title">Search for Github users</h3>
                     <input class="hero--sorted__users--user" type="text" id="hero--sorted__users--user">
@@ -52,12 +52,23 @@
             <div class="hero--results" id="hero--result">
                 <h2 class="hero--result__title">Results</h2>
                 <div class="hero--result__error"></div>
-                </div>
+            </div>
             <div class="pagination">
                 <span class="pagination__prev"><i class="fa-solid fa-angle-left"></i>prev</span>
                 <input class="pagination__input" id="pagination__input" type="text">
                 <span class="pagination__next">next<i class="fa-solid fa-angle-right"></i></span>
             </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="user">
+    <div class="container">
+        <div class="user">
+            <div class="user--results" id="user--result">
+                <h2 class="user--result__title">User Info</h2>
+                <div class="user--result__error"></div>
             </div>
         </div>
     </div>
@@ -65,9 +76,9 @@
 
 
 
-<script src="./utils/favorites.js"></script>
-<script src="js/header.js"></script>
-<script src="js/liked.js"></script>
+<script src="utils/localStorage.js"></script>
+<script src="js/user.js"></script>
+<script src="./header.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

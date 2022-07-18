@@ -69,14 +69,14 @@ body{
     font-size: 15px;
     font-weight: 400;
     line-height: 10px;
-    letter-spacing: 1.5px;
-    color: white;
-}
-.header--corner__favorites--count{
-    margin-left: 20px;
-    position: absolute;
-}
-/*HEADER*/
+        letter-spacing: 1.5px;
+        color: white;
+    }
+    .header--corner__favorites--count{
+        margin-left: 20px;
+        position: absolute;
+    }
+    /*HEADER*/
 
 
 /*HERO*/

@@ -3,8 +3,12 @@ class Users{
         this.classNameActive = 'hero--results__data--active--star__active'
     }
 
-    handleSetLocationStorage(element,id){
-        const { pushUsers, users } = favoritesUtils.putUsers(id)
+    handleSetLocationStorage(element,id,avatar,login,url){
+
+        const obj = {
+            id, avatar, login, url,
+        }
+       const {pushUsers, users} = favoritesUtils.putUsers(obj)
 
         if (pushUsers){
             element.classList.add(this.classNameActive)
@@ -12,7 +16,18 @@ class Users{
             element.classList.remove(this.classNameActive)
         }
         header.render(users.length)
+        console.log(obj)
     }
+
+    handleAddUser (id,avatar,login,url) {
+        const cart = {
+            id,avatar,login,url
+        }
+
+        console.log(cart,'sjsjsj')
+        userInfo.render(cart)
+    }
+
 
     render(){
 
@@ -21,7 +36,9 @@ class Users{
         const baseUrl = 'https://api.github.com/search/users?q='
         const heroResults = document.querySelector('.hero--results')
         const errorItem = document.querySelector('.hero--result__error')
-// const heroTitle = document.querySelector('.hero--result__title')
+        // const star = document.querySelector('.hero--results__data--active--star')
+        // const heroTitle = document.querySelector('.hero--result__title')
+
 
 
         let allResult = {
@@ -80,8 +97,9 @@ class Users{
                 .then((data) => {
                     console.log(data)
                     const resultsUser = data.items
-                    if (resultsUser === 0){
 
+
+                    if (resultsUser === 0){
                     }
                     renderResults(resultsUser)
                     errorItem.innerHTML = ''
@@ -91,19 +109,21 @@ class Users{
                     errorItem.innerHTML = error;
                 })
 
-// }
+
 
             function renderResults(result) {
                 heroResults.innerHTML = '';
-                result.forEach(({id,avatar_url, login,url}) => {
+                result.forEach(({id,avatar_url,html_url, login}) => {
 
                     let activeClass = '';
+                    const findIndex = usersStore.find(el => el.id === id)
 
-                    if (usersStore.indexOf(id) === -1){
-                        activeClass = ''
-                    }else {
+                    if (findIndex){
                         activeClass = ' hero--results__data--active--star__active';
+                    }else {
+                        activeClass = ''
                     }
+
 
                         heroResults.innerHTML += `
             <div class="hero--results__data">
@@ -111,16 +131,19 @@ class Users{
                         <img class="hero--results__data--info__img" src="${avatar_url}" alt="">
                         <div class="hero--results__data--user">
                             <h3 class="hero--results__data--user__name">${login}</h3>
-                            <a class="hero--results__data--user__link" href="${url}">${url}</a>
+                            <a class="hero--results__data--user__link" href="${html_url}">${html_url}</a>
                         </div>
                     </div>
                     <div class="hero--results__data--active">
-                        <span class="hero--results__data--active--star  ${activeClass}" onclick="usersPage.handleSetLocationStorage(this, ${id})"><i class="fa-solid fa-star"></i></span>
+                        <span class="hero--results__data--active--star ${activeClass}" onclick="usersPage.handleSetLocationStorage(this, ${id}, \'${avatar_url}', \'${login}\',\'${html_url}\')"><i class="fa-solid fa-star"></i></span>
                         <div class="hero--results__data--active--button">
-                            <button class="hero--results__data--active--button--btn">Show repisitories</button>
+                            <a href="../../zeon-js-github/user.html" class="hero--results__data--active--button--btn" onclick="usersPage.handleAddUser(${id}, \'${avatar_url}', \'${login}\',\'${html_url}\')">Show repisitories</a>
                         </div>
                     </div>`
+
+
                 })
+
             }
         }
 
@@ -177,16 +200,9 @@ class Users{
                     addResultUser(search.value)
                     searchUsers()
                 }, 500)
-
-
             }
         }
-
-
-
-
     }
-
 }
 
 const usersPage = new Users();
