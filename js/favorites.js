@@ -57,7 +57,7 @@ class Favorites {
                     <div class="favorites--results__data--active">
                         <span class="favorites--results__data--active--star ${activeClass}" onclick="favorites.handleLocalStorage(this, ${id}, \'${avatar}', \'${login}\',\'${url}\')"><i class="fa-solid fa-star"></i></span>
                         <div class="favorites--results__data--active--button">
-                            <a href="../../zeon-js-github/user.html" class="favorites--results__data--active--button--btn">Show repisitories</a>
+                            <button class="favorites--results__data--active--button--btn" onclick="usersPage.handleAddUser(${id}, \'${avatar}', \'${login}\',\'${url}\')">Show repisitories</button>
                         </div>
                     </div>`
         })

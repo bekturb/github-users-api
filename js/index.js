@@ -1,3 +1,6 @@
+
+
+
 class Users{
     constructor() {
         this.classNameActive = 'hero--results__data--active--star__active'
@@ -19,12 +22,12 @@ class Users{
         console.log(obj)
     }
 
-    handleAddUser (id,avatar,login,url) {
+    handleAddUser (id,avatar,login,mainUrl,url) {
         const cart = {
-            id,avatar,login,url
+            id,avatar,login,mainUrl,url
         }
 
-        console.log(cart,'sjsjsj')
+        console.log(cart)
         userInfo.render(cart)
     }
 
@@ -113,7 +116,7 @@ class Users{
 
             function renderResults(result) {
                 heroResults.innerHTML = '';
-                result.forEach(({id,avatar_url,html_url, login}) => {
+                result.forEach(({id,avatar_url,html_url, login,url,}) => {
 
                     let activeClass = '';
                     const findIndex = usersStore.find(el => el.id === id)
@@ -137,7 +140,7 @@ class Users{
                     <div class="hero--results__data--active">
                         <span class="hero--results__data--active--star ${activeClass}" onclick="usersPage.handleSetLocationStorage(this, ${id}, \'${avatar_url}', \'${login}\',\'${html_url}\')"><i class="fa-solid fa-star"></i></span>
                         <div class="hero--results__data--active--button">
-                            <a href="../../zeon-js-github/user.html" class="hero--results__data--active--button--btn" onclick="usersPage.handleAddUser(${id}, \'${avatar_url}', \'${login}\',\'${html_url}\')">Show repisitories</a>
+                            <button class="hero--results__data--active--button--btn" onclick="usersPage.handleAddUser(${id}, \'${avatar_url}', \'${login}\',\'${html_url}\',\'${url}\')">Show repisitories</button>
                         </div>
                     </div>`
 

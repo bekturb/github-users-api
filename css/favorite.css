@@ -69,14 +69,14 @@ body{
     font-size: 15px;
     font-weight: 400;
     line-height: 10px;
-        letter-spacing: 1.5px;
-        color: white;
-    }
-    .header--corner__favorites--count{
-        margin-left: 20px;
-        position: absolute;
-    }
-    /*HEADER*/
+    letter-spacing: 1.5px;
+    color: white;
+}
+.header--corner__favorites--count{
+    margin-left: 20px;
+    position: absolute;
+}
+/*HEADER*/
 .favorites--results{
     padding: 50px 0;
 }
@@ -464,7 +464,7 @@ body{
     /*position: absolute;*/
     /*top: 20100px;*/
     /*left: 50%;*/
-    transform: translateY( -31%);
+    transform: translateY( -6%);
     margin: 0 auto;
     background-color: white;
 }
