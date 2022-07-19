@@ -33,19 +33,21 @@ class Favorites {
 
         function renderResults(result) {
             favoritesResults.innerHTML = '';
-            result.forEach(({id,avatar,url, login}) => {
+            if (result.length) {
+
+                result.forEach(({id, avatar, url, login}) => {
 
 
-                let activeClass = '';
-                const findIndex = usersStore.find(el => el.id === id)
+                    let activeClass = '';
+                    const findIndex = usersStore.find(el => el.id === id)
 
-                if (findIndex){
-                    activeClass = ' favorites--results__data--active--star__active';
-                }else {
-                    activeClass = ''
-                }
+                    if (findIndex) {
+                        activeClass = ' favorites--results__data--active--star__active';
+                    } else {
+                        activeClass = ''
+                    }
 
-                favoritesResults.innerHTML += `
+                    favoritesResults.innerHTML += `
             <div class="favorites--results__data">
                     <div class="favorites--results__data--info">
                         <img class="favorites--results__data--info__img" src="${avatar}" alt="">
@@ -60,7 +62,13 @@ class Favorites {
                             <button class="favorites--results__data--active--button--btn" onclick="usersPage.handleAddUser(${id}, \'${avatar}', \'${login}\',\'${url}\')">Show repisitories</button>
                         </div>
                     </div>`
-        })
+                })
+            }else   {
+                favoritesResults.innerHTML +=`
+                <div>
+                <h1>No result</h1>
+</div>`
+            }
     }
     }
 }

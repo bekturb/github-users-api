@@ -1,6 +1,20 @@
 class UserInfo {
     constructor() {
+        this.classNameActive = 'user--results__data--active--star__active'
+    }
 
+    handleSetLocationStatic(element, id, avatar, login, url) {
+        const card = {
+            id, avatar, login, url,
+        }
+        const {pushUsers, users} = favoritesUtils.putUsers(card)
+
+        if (pushUsers){
+            element.classList.add(this.classNameActive)
+        }else{
+            element.classList.remove(this.classNameActive)
+        }
+        header.render(users.length)
     }
 
     handleClosePage() {
@@ -10,11 +24,19 @@ class UserInfo {
     render(card) {
 
 
-        // const usersStore = favoritesUtils.getUsers();
+        const usersStore = favoritesUtils.getUsers();
         const errorItem = document.querySelector('.user--result__error')
         let catalog = ''
         let mainCatalog = ''
 
+        let activeClass = '';
+        const findIndex = usersStore.find(el => el.id === card.id)
+
+        if (findIndex) {
+            activeClass = ' user--results__data--active--star__active';
+        } else {
+            activeClass = ''
+        }
 
         mainCatalog += `
             <div class="user--results__data">
@@ -26,9 +48,9 @@ class UserInfo {
                         </div>
                     </div>
                     <div class="user--results__data--active">
-                        <span class="user--results__data--active--star" onclick="usersPage.handleSetLocationStorage(this, ${card.id}, \'${card.avatar}', \'${card.login}\',\'${card.url}\')"><i class="fa-solid fa-star"></i></span>
+                        <span class="user--results__data--active--star ${activeClass}" onclick="userInfo.handleSetLocationStatic(this, ${card.id}, \'${card.avatar}', \'${card.login}\',\'${card.url}\')"><i class="fa-solid fa-star"></i></span>
                         <div class="user--results__data--active--button">
-                            <a href="${card.url}" class="user--results__data--active--button--btn">Show repisitories</a>
+                            <a href="${card.mainUrl}" class="user--results__data--active--button--btn">Show repisitories</a>
                         </div>
                     </div>`
 
@@ -63,19 +85,11 @@ class UserInfo {
 
                 console.log(el.name)
 
-                // let activeClass = '';
-                // const findIndex = usersStore.find(el => el.id === card.id)
-                //
-                // if (findIndex) {
-                //     activeClass = ' user--results__data--active--star__active';
-                // } else {
-                //     activeClass = ''
-                // }
                 catalog += `
          <div class="user__repos">
                         <h3 class="user__repos--title">${el.name}</h3>
                         <div class="user__repos--button">
-                            <button class="user__repos--button__btn">${el.url}</button>
+                            <a href="${el.html_url}" class="user__repos--button__btn">Go to Github</a>
                         </div>
             </div>
         `
@@ -108,6 +122,8 @@ ${catalog}
         }
 
     }
+
+
 }
 
 // }

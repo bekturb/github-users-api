@@ -19,7 +19,7 @@ class Users{
             element.classList.remove(this.classNameActive)
         }
         header.render(users.length)
-        console.log(obj)
+        console.log(obj,'ssks')
     }
 
     handleAddUser (id,avatar,login,mainUrl,url) {
@@ -39,13 +39,14 @@ class Users{
         const baseUrl = 'https://api.github.com/search/users?q='
         const heroResults = document.querySelector('.hero--results')
         const errorItem = document.querySelector('.hero--result__error')
+        const pagination = document.querySelector('.pagination')
         // const star = document.querySelector('.hero--results__data--active--star')
         // const heroTitle = document.querySelector('.hero--result__title')
 
 
 
         let allResult = {
-            name: 'bekturb',
+            name: '',
             sort: 'followers',
             order: 'desc',
             perPage: 4,
@@ -116,16 +117,18 @@ class Users{
 
             function renderResults(result) {
                 heroResults.innerHTML = '';
-                result.forEach(({id,avatar_url,html_url, login,url,}) => {
+                if (result.length) {
 
-                    let activeClass = '';
-                    const findIndex = usersStore.find(el => el.id === id)
+                    result.forEach(({id, avatar_url, html_url, login, url,}) => {
 
-                    if (findIndex){
-                        activeClass = ' hero--results__data--active--star__active';
-                    }else {
-                        activeClass = ''
-                    }
+                        let activeClass = '';
+                        const findIndex = usersStore.find(el => el.id === id)
+
+                        if (findIndex) {
+                            activeClass = ' hero--results__data--active--star__active';
+                        } else {
+                            activeClass = ''
+                        }
 
 
                         heroResults.innerHTML += `
@@ -145,7 +148,13 @@ class Users{
                     </div>`
 
 
-                })
+                    })
+                }else {
+                    heroResults.innerHTML +=`
+                    <div> NO Result</div>`
+                    pagination.innerHTML = ''
+
+                }
 
             }
         }

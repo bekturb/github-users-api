@@ -461,11 +461,10 @@ body{
 .userContainer{
     padding-bottom: 20px;
     width: 90%;
-    /*position: absolute;*/
-    /*top: 20100px;*/
-    /*left: 50%;*/
-    transform: translateY( -31%);
-    margin: 0 auto;
+    min-height: 100vh;
+    position: absolute;
+    left: 5%;
+    margin: -1290px auto;
     background-color: white;
 }
 
