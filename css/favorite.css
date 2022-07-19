@@ -626,4 +626,26 @@ body{
     display: inline;
 
 }
+
+
 /*info*/
+
+
+@media (max-width: 1200px) {
+
+    .container{
+        max-width: 1025px;
+    }
+
+
+    .pagination {
+        margin: 100px 600px;
+    }
+    .user--results__close{
+
+        margin: 0 20px;
+    }
+
+}
+
+

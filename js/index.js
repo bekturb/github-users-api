@@ -19,7 +19,7 @@ class Users{
             element.classList.remove(this.classNameActive)
         }
         header.render(users.length)
-        console.log(obj,'ssks')
+        console.log(obj,)
     }
 
     handleAddUser (id,avatar,login,mainUrl,url) {
@@ -40,6 +40,7 @@ class Users{
         const heroResults = document.querySelector('.hero--results')
         const errorItem = document.querySelector('.hero--result__error')
         const pagination = document.querySelector('.pagination')
+        const loader = document.querySelector('.hero--result__loader')
         // const star = document.querySelector('.hero--results__data--active--star')
         // const heroTitle = document.querySelector('.hero--result__title')
 
@@ -92,7 +93,7 @@ class Users{
                 .then(response => {
                     console.log(response)
                     if (!response.ok) {
-                        throw Error('ERROR')
+                        throw Error('error')
                     } else {
                         return response.json()
                     }
@@ -101,16 +102,20 @@ class Users{
                 .then((data) => {
                     console.log(data)
                     const resultsUser = data.items
-
-
+                       spinnerPage.spinnerClear()
                     if (resultsUser === 0){
                     }
+                    // loader.classList.add('.hide')
+                    // setTimeout(() => {
+                    //     loader.classList.remove()
+                    // })
                     renderResults(resultsUser)
                     errorItem.innerHTML = ''
                 })
 
                 .catch((error) => {
-                    errorItem.innerHTML = error;
+                    spinnerPage.spinnerClear()
+                    errorItem.innerHTML = "NO CONNECTION";
                 })
 
 
@@ -205,7 +210,7 @@ class Users{
 
             const search = document.getElementById('hero--sorted__users--user')
             search.onkeyup = (event) => {
-
+                spinnerPage.render()
                 clearTimeout(searchTimoutToken)
 
                 searchTimoutToken = setTimeout(() => {
