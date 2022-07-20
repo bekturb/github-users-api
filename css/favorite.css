@@ -464,7 +464,7 @@ body{
     min-height: 100vh;
     position: absolute;
     left: 5%;
-    margin: -680px auto;
+    margin: -500px auto;
     background-color: white;
 }
 
@@ -647,5 +647,398 @@ body{
     }
 
 }
+
+@media  (max-width: 1024px){
+
+    .container{
+        max-width: 992px;
+    }
+
+    .hero--sorted__users--user {
+        width: 300px;
+    }
+
+}
+
+@media  (max-width: 992px){
+
+    .container{
+        max-width: 820px;
+    }
+}
+
+@media  (max-width: 820px) {
+
+    .container {
+        max-width: 770px;
+    }
+
+    .hero--sorted__users--user {
+        width: 250px;
+    }
+
+    .hero--sorted--sort--items {
+        width: 150px;
+    }
+
+    .hero--sorted--order--items {
+        width: 150px;
+
+    }
+
+    .hero--sorted__users--title {
+        font-size: 20px;
+    }
+}
+
+@media  (max-width: 770px) {
+
+    .container {
+        max-width: 600px;
+    }
+
+    .hero--sorted__users--user {
+        font-size: 12px;
+        width: 200px;
+    }
+
+    .hero--sorted--sort--items {
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .hero--sorted--order--items {
+        font-size: 12px;
+        width: 100px;
+
+    }
+
+    .hero--sorted__users--title {
+        font-size: 15px;
+    }
+
+    .pagination {
+        margin: 100px 400px;
+    }
+    .hero--sorted--perPage--items {
+        width: 90px;
+        font-size: 15px;
+    }
+
+    .hero--results__data {
+        height: 240px;
+        margin: 40px 0;
+        display: block;
+        background: #ffffff;
+    }
+
+    .hero--results__data--active--button {
+        margin-top: auto;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .hero--results__data--active {
+        margin: -160px 0;
+        display: block;
+        text-align: end;
+    }
+
+    .hero--results__data--info {
+        display: block;
+    }
+
+    .hero--results__data--user__name {
+        margin-bottom: 50px;
+        margin-left: 30px;
+
+    }
+
+    .hero--results__data--active--button--btn {
+        margin: 125px 0;
+    }
+
+    .userContainer {
+        margin: -500px auto;
+    }
+
+    .user--results__data {
+        height: 240px;
+        margin: 40px 0;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(128, 128, 128, 0.28);
+    }
+
+    .user--results__data--active {
+        margin: 0 30px;
+        display: block;
+        text-align: end;
+    }
+
+    .user--results__data--info {
+        margin: 20px;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    .user--results__data--active {
+        margin: -150px 30px;
+        display: block;
+        text-align: end;
+    }
+    .user--results__data--active--button {
+        margin-top: 100px;
+    }
+    .user--results__data--user__name {
+        margin-bottom: 60px;
+    }
+
+    .user__repos {
+        padding: 50px;
+        text-align: center;
+        height: 200px;
+        display: block;
+    }
+
+    .user__repos--title {
+        margin-left: 30px;
+        margin-bottom: 70px;
+    }
+}
+
+@media  (max-width: 600px) {
+
+    .container {
+        max-width: 485px;
+    }
+
+    .header--corner__search {
+        padding: 5px 30px;
+    }
+
+    .header--corner__favorites {
+        padding: 5px 30px;
+    }
+
+    .header--logo {
+        font-size: 20px;
+    }
+
+    .hero--sorted__users--user {
+        font-size: 12px;
+        width: 150px;
+    }
+
+    .hero--sorted__users--title {
+        font-size: 10px;
+    }
+
+    .hero--sorted--sort--items {
+        font-size: 10px;
+        width: 80px;
+    }
+
+    .hero--sorted--order--items {
+        font-size: 10px;
+        width: 80px;
+    }
+
+    .hero--sorted--perPage--items {
+        font-size: 10px;
+        width: 80px;
+    }
+
+    .hero--sorted--perPage--title {
+        font-size: 10px;
+    }
+
+    .hero--sorted--order--title {
+        font-size: 10px;
+    }
+
+    .hero--sorted--sort--items--title {
+        font-size: 15px;
+    }
+    .hero--sorted--sort--items--title {
+        font-size: 10px;
+    }
+
+    .pagination {
+        margin: 100px 200px;
+    }
+
+    .favorites--results__data--info {
+         display:block;
+    }
+
+    .favorites--results__data {
+        height: 240px;
+    }
+
+    .favorites--results__data--active {
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+
+    .favorites--results__data--user__name {
+        margin-bottom: 40px;
+        margin-left: 40px;
+    }
+    .favorites--results__data--active--button {
+        margin-top: 150px;
+    }
+
+    .userContainer {
+        margin: -700px auto;
+    }
+
+    .user--results__data--active {
+        margin: -190px 0;
+    }
+
+    .user--results__data--active--button {
+        margin-top: 135px;
+    }
+
+    .user--results__data--active--button--btn {
+        padding: 10px 20px;
+    }
+    .user__repos--title {
+        line-height: 20px;
+    }
+
+}
+
+@media  (max-width: 480px) {
+
+    .container {
+        max-width: 320px;
+    }
+
+
+    .header {
+        display: block;
+    }
+
+
+    .header--logo {
+        margin:  50px;
+        font-size: 30px;
+    }
+
+    #header {
+        padding: 50px 0;
+        width: 100%;
+        background: rgba(130, 130, 130, 0.30);
+    }
+
+    .header--corner{
+        margin: 50px 0;
+    }
+
+    .hero--sorted {
+        display: block;
+    }
+
+    .hero--sorted__users--user {
+        font-size: 12px;
+        width: 300px;
+        margin: 0 10px;
+    }
+
+    .hero--sorted__users--title {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .hero--sorted--sort--items {
+        font-size: 14px;
+        width: 300px;
+        margin: 0 10px;
+    }
+    .hero--sorted--sort--items--title {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .hero--sorted--order--title {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .hero--sorted--order--items {
+        font-size: 14px;
+        width: 300px;
+        margin: 0 10px;
+    }
+
+    .hero--sorted--perPage--title {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .hero--sorted--perPage--items {
+        font-size: 14px;
+        width: 300px;
+        margin: 0 10px;
+    }
+
+    .pagination {
+        margin: 100px 100px;
+    }
+
+    #mask {
+        position: absolute;
+        top: 110%;
+    }
+
+    .hero--results__data--active--button--btn {
+        margin: 50px 0;
+        padding: 10px 0;
+    }
+    .hero--results__data--active {
+        margin: -160px 20px;
+        display: block;
+        text-align: end;
+    }
+
+    .favorites--results__data {
+        height: 240px;
+        margin: 40px 0;
+        display: block;
+        background: #ffffff;
+    }
+
+    .favorites--results__data--active {
+        margin: -160px 0;
+        display: block;
+        text-align: end;
+    }
+
+    .favorites--results__data--user__name {
+        margin-bottom: 40px;
+        margin-left: 0;
+    }
+    .favorites--results__data--active--button {
+        margin-top: 50px;
+    }
+
+    .favorites--results__data--active--button--btn {
+        padding: 10px 10px;
+    }
+
+
+    .user__repos--button__btn {
+        padding: 10px 30px;
+    }
+
+}
+
+
 
 
